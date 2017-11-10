@@ -3621,7 +3621,7 @@ crop.directive('imgCrop', ['$timeout', 'cropHost', 'cropPubSub', function ($time
      * */
     ColorThief.prototype.getColor = function(sourceImage, quality) {
         var palette = this.getPalette(sourceImage, 5, quality);
-        var dominantColor = palette[0];
+        var dominantColor = !!palette ? palette[0] : null;
         return dominantColor;
     };
 
